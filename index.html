@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="翰林七上歷史第 1–2 課互動式複習講義與 60 題測驗">
+<style>body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
+<title>七上歷史 第1–2課 複習</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+/* Layout: one reading column; a strata band (soil layers → sea) heads the page; tabs switch 講義 / 測驗 / 資源 */
+:root{
+  --paper:#f5f6f2; --card:#ffffff; --ink:#1e2a2a; --muted:#5d6b68; --line:#d9ded8;
+  --jade:#2f7d6b; --jade-soft:#e2efe9; --sea:#27507a; --sea-soft:#e3ebf4;
+  --clay:#9a6a3c; --ok:#2e7d4a; --ok-soft:#e3f2e8; --bad:#b33a3a; --bad-soft:#f8e4e2;
+  --s1:#c9b48f; --s2:#a98a62; --s3:#7c6a55; --s4:#5b5149;
+  --display:"Noto Serif TC","Songti TC",serif;
+  --body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#141a1a; --card:#1c2423; --ink:#e4ebe8; --muted:#9aa9a5; --line:#2f3a38;
+  --jade:#5fb59f; --jade-soft:#1f3530; --sea:#82aad6; --sea-soft:#1d2a3a;
+  --clay:#d0a275; --ok:#6cc58c; --ok-soft:#1d3326; --bad:#ec7f7a; --bad-soft:#3a2221;
+  --s1:#6d5f48; --s2:#5a4a37; --s3:#463a2e; --s4:#332b25; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#141a1a; --card:#1c2423; --ink:#e4ebe8; --muted:#9aa9a5; --line:#2f3a38;
+  --jade:#5fb59f; --jade-soft:#1f3530; --sea:#82aad6; --sea-soft:#1d2a3a;
+  --clay:#d0a275; --ok:#6cc58c; --ok-soft:#1d3326; --bad:#ec7f7a; --bad-soft:#3a2221;
+  --s1:#6d5f48; --s2:#5a4a37; --s3:#463a2e; --s4:#332b25; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7}
+.wrap{max-width:860px;margin:0 auto;padding-inline:16px;padding-block:28px 64px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.3;margin:0}
+h1{font-size:clamp(1.6rem,4.5vw,2.3rem);font-weight:900}
+h2{font-size:1.4rem;margin-top:8px}
+h3{font-size:1.1rem;color:var(--jade)}
+.l2 h3{color:var(--sea)}
+.eyebrow{font-size:.8rem;letter-spacing:.12em;color:var(--muted)}
+header{display:grid;gap:6px}
+header p{margin:0;color:var(--muted)}
+.tabs{display:flex;gap:4px;margin-top:20px;border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);background:var(--paper);z-index:5;overflow-x:auto}
+.tabs button{font:inherit;font-weight:700;background:none;border:0;border-bottom:3px solid transparent;color:var(--muted);padding:10px 14px;cursor:pointer;white-space:nowrap}
+.tabs button[aria-selected="true"]{color:var(--ink);border-color:var(--jade)}
+button:focus-visible,select:focus-visible,label:focus-within{outline:2px solid var(--sea);outline-offset:2px}
+section.panel{display:grid;gap:24px;padding-top:24px}
+.lesson{display:grid;gap:16px}
+.lesson-head{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;border-bottom:2px solid var(--jade);padding-bottom:6px}
+.l2 .lesson-head{border-color:var(--sea)}
+.lesson-head .no{font-family:var(--display);font-weight:900;font-size:1.8rem;color:var(--jade)}
+.l2 .lesson-head .no{color:var(--sea)}
+details{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:4px 16px}
+details[open]{padding-bottom:16px}
+summary{cursor:pointer;padding:10px 0;font-weight:700}
+summary h3{display:inline}
+.tbl{overflow-x:auto;margin-block:8px}
+table{border-collapse:collapse;width:100%;font-size:.94rem;min-width:480px}
+th,td{border-bottom:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+th{font-weight:700;color:var(--muted);font-size:.85rem;letter-spacing:.04em}
+ul{padding-left:1.2em;margin:6px 0}
+.note{font-size:.9rem;color:var(--muted)}
+.tip{background:var(--jade-soft);border-radius:6px;padding:8px 12px;font-size:.95rem}
+.l2 .tip{background:var(--sea-soft)}
+/* strata */
+.strata{display:grid;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+.stratum{display:grid;grid-template-columns:7.5em 1fr;gap:12px;padding:10px 14px;color:var(--ink)}
+.stratum b{font-family:var(--display)}
+.stratum span{font-size:.92rem}
+.st-sea{background:var(--sea-soft)}
+.st-1{background:color-mix(in srgb,var(--s1) 45%,var(--card))}
+.st-2{background:color-mix(in srgb,var(--s2) 45%,var(--card))}
+.st-3{background:color-mix(in srgb,var(--s3) 45%,var(--card))}
+.st-4{background:color-mix(in srgb,var(--s4) 45%,var(--card))}
+.mnemonic{font-family:var(--display);font-size:1.15rem}
+/* quiz */
+.bar{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+.bar label{display:flex;gap:6px;align-items:center;font-size:.92rem}
+select{font:inherit;padding:4px 8px;border-radius:6px;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.seg button{font:inherit;font-size:.9rem;border:0;background:var(--paper);color:var(--muted);padding:5px 12px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--jade);color:var(--card)}
+.btn{font:inherit;font-weight:700;border-radius:6px;padding:8px 16px;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.btn.primary{background:var(--jade);border-color:var(--jade);color:var(--card)}
+.progress{height:6px;background:var(--line);border-radius:3px;overflow:hidden;flex:1 1 140px}
+.progress i{display:block;height:100%;background:var(--jade);width:0;transition:width .25s}
+.count{font-size:.88rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.qlist{display:grid;gap:14px}
+.part{font-family:var(--display);font-weight:600;font-size:1.1rem;margin-top:8px}
+.passage{border-left:3px solid var(--clay);padding:6px 12px;background:var(--card);font-size:.95rem}
+.q{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:grid;gap:10px}
+.q.right{border-color:var(--ok)}
+.q.wrong{border-color:var(--bad)}
+.qhead{display:flex;gap:10px}
+.qnum{font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums;min-width:2.2em}
+.tag{font-size:.75rem;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:0 6px;margin-left:6px;white-space:nowrap}
+.opts{display:grid;gap:6px;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+.opt{font:inherit;text-align:left;display:flex;gap:8px;padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--paper);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--jade)}
+.opt b{color:var(--muted)}
+.opt.sel{border-color:var(--sea);background:var(--sea-soft)}
+.opt.correct{border-color:var(--ok);background:var(--ok-soft)}
+.opt.incorrect{border-color:var(--bad);background:var(--bad-soft)}
+.opt:disabled{cursor:default}
+.exp{font-size:.92rem;padding:8px 12px;border-radius:6px;background:var(--paper)}
+.exp strong.ok{color:var(--ok)} .exp strong.no{color:var(--bad)}
+.result{background:var(--card);border:2px solid var(--jade);border-radius:8px;padding:16px;display:grid;gap:10px}
+.score{font-family:var(--display);font-weight:900;font-size:2.4rem;line-height:1;font-variant-numeric:tabular-nums}
+.secstats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}
+.secstats div{background:var(--paper);border-radius:6px;padding:6px 10px;font-size:.9rem}
+.actions{display:flex;flex-wrap:wrap;gap:8px}
+.res a{color:var(--sea)}
+@media (prefers-reduced-motion:reduce){.progress i{transition:none}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">國中｜歷史｜108 課綱｜翰林｜七上</div>
+  <h1>第 1–2 課 複習：史前臺灣到大航海時代</h1>
+  <p>讀講義 → 做 60 題測驗 → 看錯題解析。作答紀錄會保存在這台裝置的瀏覽器中。</p>
+</header>
+
+<nav class="tabs" role="tablist">
+  <button role="tab" id="tab-notes" aria-selected="true" data-p="notes">講義</button>
+  <button role="tab" id="tab-quiz" aria-selected="false" data-p="quiz">測驗（60 題）</button>
+  <button role="tab" id="tab-res" aria-selected="false" data-p="res">參考資源</button>
+</nav>
+
+<!-- ============ 講義 ============ -->
+<section class="panel" id="notes">
+  <div class="lesson l1">
+    <div class="lesson-head"><span class="no">01</span><h2>史前臺灣與原住民文化</h2></div>
+
+    <div>
+      <p class="note" style="margin:0 0 6px">考古地層：越下層越古老</p>
+      <div class="strata" aria-label="史前文化地層示意">
+        <div class="stratum st-sea"><b>歷史時代</b><span>有文字記載（17 世紀荷蘭、西班牙留下文獻）</span></div>
+        <div class="stratum st-1"><b>金屬器時代</b><span>十三行文化：煉鐵、人面陶罐、唐宋錢幣與玻璃珠</span></div>
+        <div class="stratum st-2"><b>新石器（中晚）</b><span>卑南文化（石板棺、玉器）、圓山文化（貝塚）、南科遺址（碳化稻米、小米）</span></div>
+        <div class="stratum st-3"><b>新石器（早）</b><span>大坌坑文化：粗繩紋陶</span></div>
+        <div class="stratum st-4"><b>舊石器時代</b><span>長濱文化（臺東八仙洞）：打製石器、採集狩獵</span></div>
+      </div>
+      <p class="mnemonic">口訣：長（濱）→ 大（坌坑）→ 卑（南）→ 十三（行）</p>
+    </div>
+
+    <details open>
+      <summary><h3>1-1 考古挖掘與史前文化</h3></summary>
+      <ul>
+        <li><b>史前 vs. 歷史時代</b>：以「有無文字記載」區分，史前時代靠考古研究。</li>
+        <li><b>遺址</b>＝古人生活的地點（如八仙洞）；<b>遺物</b>＝古人留下的器物、骨骸（石器、陶器、玉器）。</li>
+        <li>史前文化常以最早發現的地點命名。</li>
+      </ul>
+      <div class="tbl"><table>
+        <thead><tr><th>時代</th><th>工具</th><th>生活方式</th><th>代表文化</th></tr></thead>
+        <tbody>
+          <tr><td>舊石器</td><td>打製石器</td><td>採集、狩獵、漁撈，居無定所</td><td>長濱文化</td></tr>
+          <tr><td>新石器</td><td>磨製石器、陶器</td><td>農耕、定居、形成聚落</td><td>大坌坑、南科、圓山、卑南</td></tr>
+          <tr><td>金屬器</td><td>鐵器、會煉鐵</td><td>農獵並行，與外地交易</td><td>十三行文化</td></tr>
+        </tbody>
+      </table></div>
+      <div class="tbl"><table>
+        <thead><tr><th>文化／遺址</th><th>地點</th><th>考點</th></tr></thead>
+        <tbody>
+          <tr><td>長濱文化</td><td>臺東長濱八仙洞</td><td>已知最早的史前文化；打製石器</td></tr>
+          <tr><td>左鎮人</td><td>臺南左鎮菜寮溪</td><td>人類頭骨化石；年代仍有爭議</td></tr>
+          <tr><td>亮島人</td><td>馬祖亮島</td><td>約 8000 多年前；DNA 與南島語族有關</td></tr>
+          <tr><td>大坌坑文化</td><td>新北八里</td><td>粗繩紋陶</td></tr>
+          <tr><td>南科遺址群</td><td>臺南科學園區</td><td>碳化稻米、小米 → 已有農業</td></tr>
+          <tr><td>圓山文化</td><td>臺北圓山</td><td>貝塚</td></tr>
+          <tr><td>卑南文化</td><td>臺東卑南</td><td>石板棺、玉器、月形石柱</td></tr>
+          <tr><td>十三行文化</td><td>新北八里</td><td>煉鐵、人面陶罐、唐宋錢幣 → 對外交易</td></tr>
+        </tbody>
+      </table></div>
+    </details>
+
+    <details open>
+      <summary><h3>1-2 臺灣原住民的遷徙與傳說</h3></summary>
+      <ul>
+        <li>原住民族屬<b>南島語族</b>：北至臺灣、南至紐西蘭、東至復活節島、西至馬達加斯加。</li>
+        <li><b>出臺灣說</b>：臺灣南島語言種類多、差異大、保留古老特徵，可能是發源地之一。</li>
+        <li>政府認定 <b>16 族</b>；另有分布在西部平原的<b>平埔族群</b>。</li>
+        <li>傳統上無文字，歷史靠<b>口傳故事、神話、歌謠</b>保存。</li>
+      </ul>
+      <div class="tbl"><table>
+        <thead><tr><th>起源傳說</th><th>內容</th><th>代表族群</th></tr></thead>
+        <tbody>
+          <tr><td>石生說</td><td>祖先從巨石生出</td><td>泰雅族</td></tr>
+          <tr><td>太陽卵生／壺生</td><td>太陽卵孵出祖先、祖先生於陶壺</td><td>排灣族、魯凱族</td></tr>
+          <tr><td>竹生說</td><td>祖先從竹中生出</td><td>卑南族</td></tr>
+          <tr><td>洪水傳說</td><td>逃到玉山避難</td><td>布農族、鄒族</td></tr>
+          <tr><td>射日傳說</td><td>英雄射下多餘的太陽</td><td>泰雅族、布農族</td></tr>
+        </tbody>
+      </table></div>
+      <div class="tbl"><table>
+        <thead><tr><th>族群</th><th>分布</th><th>特色</th></tr></thead>
+        <tbody>
+          <tr><td>阿美族</td><td>花東縱谷、東海岸</td><td>母系社會、年齡階級、豐年祭</td></tr>
+          <tr><td>泰雅族</td><td>北部山區</td><td>紋面、編織</td></tr>
+          <tr><td>排灣族</td><td>南部山區</td><td>貴族階級、百步蛇、琉璃珠</td></tr>
+          <tr><td>布農族</td><td>中央山脈</td><td>八部合音、射耳祭</td></tr>
+          <tr><td>賽夏族</td><td>新竹、苗栗山區</td><td>矮靈祭</td></tr>
+          <tr><td>鄒族</td><td>阿里山</td><td>戰祭（Mayasvi）</td></tr>
+          <tr><td>達悟族</td><td>蘭嶼</td><td>飛魚祭、拼板舟</td></tr>
+          <tr><td>邵族</td><td>日月潭</td><td>杵音</td></tr>
+        </tbody>
+      </table></div>
+    </details>
+  </div>
+
+  <div class="lesson l2">
+    <div class="lesson-head"><span class="no">02</span><h2>大航海時代各方勢力的競逐</h2></div>
+    <details open>
+      <summary><h3>2-1 大航海時代的到來</h3></summary>
+      <p>15 世紀起，歐洲人為了<b>香料</b>、傳播<b>天主教</b>，加上鄂圖曼帝國阻礙東西陸路貿易，轉往海上開闢新航路。</p>
+      <div class="tbl"><table>
+        <thead><tr><th>國家</th><th>東亞據點</th><th>與臺灣的關係</th></tr></thead>
+        <tbody>
+          <tr><td>葡萄牙</td><td>澳門</td><td>航經臺灣，稱「福爾摩沙」（Formosa）</td></tr>
+          <tr><td>西班牙</td><td>菲律賓馬尼拉</td><td>1626 年占北臺灣（雞籠、淡水）</td></tr>
+          <tr><td>荷蘭</td><td>巴達維亞（今雅加達），東印度公司經營</td><td>1624 年占南臺灣（大員）</td></tr>
+        </tbody>
+      </table></div>
+      <ul>
+        <li><b>明朝</b>：海禁 → 走私盛行，海盜、倭寇活躍。</li>
+        <li><b>漢人海商</b>：顏思齊、鄭芝龍以臺灣為據點。</li>
+        <li><b>日本</b>：商人來臺購買鹿皮、與中國商人交易。</li>
+        <li><b>臺灣的重要性</b>：位於中國、日本、東南亞航線的中點。</li>
+      </ul>
+    </details>
+    <details open>
+      <summary><h3>2-2 各方勢力在臺灣的競逐</h3></summary>
+      <div class="tbl"><table>
+        <thead><tr><th>年代</th><th>事件</th></tr></thead>
+        <tbody>
+          <tr><td>1604、1622</td><td>荷蘭兩度占澎湖，被明朝要求或驅逐離開</td></tr>
+          <tr><td>1624</td><td>荷蘭轉往大員（臺南安平），建熱蘭遮城（安平古堡）</td></tr>
+          <tr><td>1626</td><td>西班牙占雞籠（和平島），建聖薩爾瓦多城</td></tr>
+          <tr><td>1628 前後</td><td>西班牙進入淡水，建聖多明哥城</td></tr>
+          <tr><td>1642</td><td>荷蘭驅逐西班牙，取得北臺灣</td></tr>
+          <tr><td>1652</td><td>郭懷一事件：漢人不滿重稅反抗荷蘭</td></tr>
+          <tr><td>1653</td><td>荷蘭在赤崁建普羅民遮城（赤崁樓）</td></tr>
+          <tr><td>1662</td><td>鄭成功攻臺，荷蘭投降離開（統治約 38 年）</td></tr>
+        </tbody>
+      </table></div>
+      <ul>
+        <li><b>轉口貿易</b>：中國生絲、瓷器經臺灣轉運日本、歐洲；臺灣輸出<b>鹿皮</b>（多銷日本）、<b>蔗糖</b>。</li>
+        <li><b>王田</b>：招募漢人開墾，土地歸公司所有，漢人為佃農。</li>
+        <li><b>稅收</b>：對漢人徵人頭稅 → 引發郭懷一事件。</li>
+        <li><b>贌社</b>：原住民村社的交易權標售給漢人商人。</li>
+        <li><b>傳教</b>：以羅馬字拼寫西拉雅語 → 留下「新港文書」。</li>
+      </ul>
+      <p class="tip">易混淆：熱蘭遮城＝安平古堡（荷）｜普羅民遮城＝赤崁樓（荷）｜聖薩爾瓦多城＝雞籠（西）｜聖多明哥城＝淡水（西）</p>
+    </details>
+  </div>
+  <p class="note">年代與用詞各版本略有差異，以學校課本為準。</p>
+</section>
+
+<!-- ============ 測驗 ============ -->
+<section class="panel" id="quiz" hidden>
+  <div class="bar">
+    <label for="secSel">範圍
+      <select id="secSel">
+        <option value="all">全部 60 題</option>
+        <option value="1-1">1-1 考古與史前文化</option>
+        <option value="1-2">1-2 原住民遷徙與傳說</option>
+        <option value="2-1">2-1 大航海時代的到來</option>
+        <option value="2-2">2-2 各方勢力在臺灣</option>
+      </select>
+    </label>
+    <span class="seg" role="group" aria-label="作答模式">
+      <button id="modePractice" aria-pressed="true">練習：即時對答</button>
+      <button id="modeExam" aria-pressed="false">考試：交卷再看</button>
+    </span>
+    <label for="wrongOnly"><input type="checkbox" id="wrongOnly"> 只看錯題</label>
+    <div class="progress" aria-hidden="true"><i id="progFill"></i></div>
+    <span class="count" id="countTxt"></span>
+  </div>
+  <div id="resultBox"></div>
+  <div class="qlist" id="qlist"></div>
+  <div class="actions">
+    <button class="btn primary" id="submitBtn">交卷看分數</button>
+    <button class="btn" id="resetBtn">清除作答重來</button>
+  </div>
+  <p class="note" id="resetConfirm" hidden>再按一次「確定清除」就會清空這個範圍的作答。 <button class="btn" id="resetYes">確定清除</button></p>
+</section>
+
+<!-- ============ 參考資源 ============ -->
+<section class="panel res" id="res" hidden>
+  <div class="tbl"><table>
+    <thead><tr><th>資源</th><th>用途</th></tr></thead>
+    <tbody>
+      <tr><td><a href="https://www.junyiacademy.org/" target="_blank" rel="noopener">均一教育平台</a></td><td>站內搜尋「國中歷史」七年級，有教學影片與練習題</td></tr>
+      <tr><td><a href="https://website.hle.com.tw/market/jr/%E8%A1%8C%E9%8A%B7%E7%B6%B2%E7%AB%99/112/%E6%95%99%E6%9D%90/%E6%AD%B7%E5%8F%B2/%E6%95%99%E6%9D%90%E6%A8%A3%E6%9B%B8/112%E5%9C%8B%E4%B8%AD%E7%A4%BE%E6%9C%831%E4%B8%8A%E6%AD%B7%E5%8F%B2%E7%BF%92%E4%BD%9C.pdf" target="_blank" rel="noopener">翰林 112 國中社會 1 上歷史習作樣書（PDF）</a></td><td>出版社官方習作題型</td></tr>
+      <tr><td><a href="https://www.block.tw/question/73?page=7" target="_blank" rel="noopener">BLOCK 學習網｜史前時代與原住民題庫</a></td><td>線上題庫練習</td></tr>
+      <tr><td><a href="http://education.digital.ntu.edu.tw/taiwanhistory/jcg01.html" target="_blank" rel="noopener">臺大數位學習知識網｜大航海時代與 17 世紀臺灣</a></td><td>2-1、2-2 延伸閱讀</td></tr>
+      <tr><td><a href="https://www.sshm.ntpc.gov.tw/" target="_blank" rel="noopener">新北市立十三行博物館</a></td><td>十三行文化、金屬器時代</td></tr>
+      <tr><td><a href="https://museums.moc.gov.tw/MusData/Detail?museumsId=a38e0c45-52e3-40a4-be7e-a4f2d9dbe6d9" target="_blank" rel="noopener">國立臺灣史前文化博物館（博物之島）</a></td><td>卑南文化、史前文化總覽</td></tr>
+      <tr><td><a href="https://www.cip.gov.tw/" target="_blank" rel="noopener">原住民族委員會</a></td><td>16 族簡介與祭儀</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">本頁內容依一般國中歷史教材整理，未逐字比對翰林 115 學年度課本。</p>
+</section>
+</div>
+
+<script>
+const P1="此遺址位於新北市八里區淡水河口南岸。出土了煉鐵遺跡、特殊的人面陶罐，以及唐、宋時期的錢幣、玻璃珠等非本地生產的物品。";
+const P2="公司在大員設立商館，將中國的生絲、瓷器運往日本與歐洲，並收購臺灣的鹿皮。公司又招募漢人來臺開墾，對他們徵收人頭稅；並將原住民村社的交易權標售給漢人商人。";
+const MC=(n,sec,q,o,a,exp)=>({n,sec,type:"mc",q,opts:o,a,exp,pts:1.5});
+const TF=(n,sec,q,a,exp)=>({n,sec,type:"tf",q,opts:["○ 對","✕ 錯"],a:a?0:1,exp,pts:1});
+const GR=(n,sec,g,q,o,a,exp)=>({n,sec,type:"mc",group:g,q,opts:o,a,exp,pts:4});
+const L="ABCD";
+const Q=[
+MC(1,"1-1","歷史學家區分「史前時代」與「歷史時代」的依據是什麼？",["有無使用金屬","有無農業","有無文字記載","有無聚落"],2,"有文字記載後才進入歷史時代；之前要靠考古研究。"),
+MC(2,"1-1","下列何者是舊石器時代的生活特色？",["使用磨製石器並製陶","會煉鐵","種植稻米","使用打製石器，以採集、狩獵、漁撈為生"],3,"舊石器時代用打製石器，居無定所；磨製石器、陶器、農耕是新石器。"),
+MC(3,"1-1","長濱文化的代表遺址位於何處？",["新北八里","臺東八仙洞","臺北圓山","臺南左鎮"],1,"長濱文化在臺東長濱鄉八仙洞。八里是大坌坑、十三行。"),
+MC(4,"1-1","長濱文化屬於哪一個時代？",["舊石器時代","新石器時代","金屬器時代","歷史時代"],0,"長濱文化是臺灣已知最早的史前文化，屬舊石器時代。"),
+MC(5,"1-1","下列何者「不是」新石器時代的特徵？",["使用磨製石器","製作陶器","農耕定居","煉鐵製器"],3,"煉鐵是金屬器時代（如十三行文化）的特徵。"),
+MC(6,"1-1","大坌坑文化最具代表性的器物是？",["粗繩紋陶","人面陶罐","石板棺","月形石柱"],0,"大坌坑＝粗繩紋陶；人面陶罐是十三行；石板棺、月形石柱是卑南。"),
+MC(7,"1-1","臺南科學園區考古出土了碳化的稻米與小米，這說明了什麼？",["當時已使用鐵器","當時已與歐洲貿易","當時已發展農業","當時已有文字"],2,"出土穀物證明當時人已會種植作物。"),
+MC(8,"1-1","下列哪一個文化以石板棺與精美玉器聞名？",["圓山文化","卑南文化","十三行文化","長濱文化"],1,"卑南文化：石板棺、玉器（玉玦）、月形石柱。"),
+MC(9,"1-1","圓山文化遺址中有大量古人丟棄的貝殼堆積，稱為什麼？",["甕棺","陶窯","石板棺","貝塚"],3,"貝殼堆積稱為貝塚，可推知當時居民會採集貝類為食。"),
+MC(10,"1-1","十三行文化屬於哪一個時代？",["舊石器時代","新石器時代早期","金屬器時代","歷史時代"],2,"十三行有煉鐵遺跡，屬金屬器時代。"),
+MC(11,"1-1","十三行遺址出土唐宋時期的錢幣與玻璃珠，可以推知什麼？",["當時居民已使用文字","當時居民與外地有交易往來","臺灣當時由唐朝統治","當時居民只靠狩獵為生"],1,"非本地生產的物品出現，表示與外地有交易。"),
+MC(12,"1-1","「亮島人」的人骨是在哪裡發現的？",["金門","澎湖","馬祖","蘭嶼"],2,"亮島位於馬祖列島，亮島人約 8000 多年前。"),
+MC(13,"1-1","下列史前文化由早到晚的排序，何者正確？",["大坌坑→長濱→十三行→卑南","十三行→卑南→大坌坑→長濱","長濱→十三行→大坌坑→卑南","長濱→大坌坑→卑南→十三行"],3,"舊石器（長濱）→ 新石器早（大坌坑）→ 新石器（卑南）→ 金屬器（十三行）。"),
+MC(14,"1-1","某遺址出土磨製石斧、陶器與碳化稻米，但沒有鐵器。此遺址最可能屬於哪個時代？",["舊石器時代","新石器時代","金屬器時代","歷史時代"],1,"磨製石器＋陶器＋農業、沒有鐵器 → 新石器時代。"),
+MC(15,"1-1","「左鎮人」頭骨化石發現於何處？",["臺南菜寮溪","臺東八仙洞","新北八里","臺北芝山岩"],0,"左鎮人發現於臺南左鎮菜寮溪，年代近年仍有爭議。"),
+MC(16,"1-1","考古學中的「遺址」是指古人生活過的地點。下列何者屬於遺址？",["人面陶罐","磨製石斧","八仙洞","玉玦"],2,"八仙洞是地點，屬遺址；其他是器物，屬遺物。"),
+MC(17,"1-2","南島語族分布範圍的最西邊是哪裡？",["馬達加斯加","夏威夷","紐西蘭","日本"],0,"北：臺灣｜南：紐西蘭｜東：復活節島｜西：馬達加斯加。"),
+MC(18,"1-2","臺灣原住民族在語言學上屬於哪一個語族？",["漢藏語族","南島語族","印歐語族","阿爾泰語族"],1,"臺灣原住民族屬南島語族。"),
+MC(19,"1-2","有學者認為臺灣可能是南島語族的發源地之一，主要理由是？",["臺灣南島語族人口最多","臺灣原住民最早使用文字","臺灣面積最大","臺灣南島語言種類多、差異大且保留古老特徵"],3,"語言越多樣、越古老，越可能是發源地，這就是「出臺灣說」。"),
+MC(20,"1-2","目前政府正式認定的臺灣原住民族共有幾族？",["9 族","12 族","14 族","16 族"],3,"目前認定 16 族。"),
+MC(21,"1-2","以飛魚祭與拼板舟聞名的達悟族，主要居住在哪裡？",["蘭嶼","日月潭","花蓮平原","阿里山"],0,"達悟族（雅美族）居住在蘭嶼。"),
+MC(22,"1-2","每兩年舉行一次「矮靈祭」的是哪一族？",["阿美族","賽夏族","鄒族","排灣族"],1,"矮靈祭是賽夏族最重要的祭典。"),
+MC(23,"1-2","以「八部合音」聞名的是哪一族？",["泰雅族","卑南族","布農族","邵族"],2,"八部合音是布農族的傳統歌謠。"),
+MC(24,"1-2","傳統上居住在日月潭一帶、以杵音聞名的是哪一族？",["噶瑪蘭族","魯凱族","達悟族","邵族"],3,"邵族居住在日月潭。"),
+MC(25,"1-2","阿美族傳統社會的特色是？",["母系社會、年齡階級","貴族世襲、百步蛇圖騰","紋面習俗","製作拼板舟"],0,"阿美族為母系社會並有年齡階級；B 排灣、C 泰雅、D 達悟。"),
+MC(26,"1-2","有貴族階級，以百步蛇、琉璃珠為文化象徵的是哪一族？",["泰雅族","排灣族","鄒族","賽夏族"],1,"排灣族有貴族階級，百步蛇與琉璃珠是重要象徵。"),
+MC(27,"1-2","傳統上有「紋面」習俗，且擅長編織的是哪一族？",["阿美族","卑南族","泰雅族","達悟族"],2,"泰雅族以紋面與編織聞名。"),
+MC(28,"1-2","泰雅族傳說祖先是從巨石中誕生的，這屬於哪一類起源傳說？",["石生說","竹生說","壺生說","太陽卵生說"],0,"從巨石生出＝石生說。"),
+MC(29,"1-2","布農族、鄒族的洪水傳說中，祖先逃到哪座山避難？",["陽明山","玉山","八卦山","合歡山"],1,"布農族、鄒族都有逃到玉山避洪水的傳說。"),
+MC(30,"1-2","臺灣原住民族傳統上沒有文字，歷史與文化主要靠什麼保存？",["史書","碑刻","口傳故事與歌謠","報紙"],2,"沒有文字，靠口傳故事、神話、歌謠代代相傳。"),
+MC(31,"2-1","歐洲人開闢新航路、進入「大航海時代」，大約開始於何時？",["13 世紀","15 世紀","17 世紀末","19 世紀"],1,"15 世紀起葡萄牙、西班牙開始開闢新航路。"),
+MC(32,"2-1","下列何者「不是」歐洲人開闢新航路的動機？",["取得亞洲香料","傳播天主教","鄂圖曼帝國阻礙東西陸路貿易","推銷工業革命生產的機器"],3,"工業革命在 18 世紀後半才發生，比大航海時代晚得多。"),
+MC(33,"2-1","葡萄牙人航經臺灣時，稱臺灣為什麼？",["大員","雞籠","福爾摩沙","東番"],2,"Ilha Formosa，意思是「美麗之島」。"),
+MC(34,"2-1","葡萄牙在東亞的主要據點是？",["澳門","馬尼拉","巴達維亞","長崎"],0,"葡萄牙－澳門｜西班牙－馬尼拉｜荷蘭－巴達維亞。"),
+MC(35,"2-1","西班牙在東亞的主要據點是？",["澳門","馬尼拉","巴達維亞","麻六甲"],1,"西班牙以菲律賓馬尼拉為據點。"),
+MC(36,"2-1","荷蘭東印度公司在亞洲的總部設在哪裡？",["澳門","馬尼拉","長崎","巴達維亞"],3,"巴達維亞，即今印尼雅加達。"),
+MC(37,"2-1","大航海時代各方勢力紛紛競逐臺灣，主要原因是？",["臺灣盛產香料","臺灣已有強大王國","臺灣位於中國、日本與東南亞航線的中點","臺灣擁有大量金礦"],2,"臺灣的地理位置適合作為貿易轉運站。"),
+MC(38,"2-1","17 世紀初曾以臺灣為活動據點的漢人海商是誰？",["鄭芝龍","鄭和","戚繼光","沈葆楨"],0,"鄭和是明初下西洋；戚繼光抗倭；沈葆楨是清末人物。"),
+MC(39,"2-2","荷蘭人在 1624 年占領臺灣之前，曾占領哪裡，但被明朝驅逐？",["蘭嶼","澎湖","金門","琉球"],1,"荷蘭兩度占澎湖，被明朝驅逐後轉往大員。"),
+MC(40,"2-2","荷蘭人在大員（今安平）建立的城堡是？",["聖多明哥城","聖薩爾瓦多城","普羅民遮城","熱蘭遮城"],3,"熱蘭遮城，今安平古堡。"),
+MC(41,"2-2","「普羅民遮城」就是今天的哪一個古蹟？",["赤崁樓","安平古堡","紅毛城","億載金城"],0,"普羅民遮城＝赤崁樓。"),
+MC(42,"2-2","西班牙人在 1626 年占領臺灣哪一帶？",["大員","澎湖","雞籠、淡水","打狗"],2,"西班牙占北臺灣的雞籠、淡水。"),
+MC(43,"2-2","1642 年驅逐西班牙人、取得北臺灣的是？",["明朝","日本","原住民","荷蘭"],3,"1642 年荷蘭北上驅逐西班牙。"),
+MC(44,"2-2","荷蘭統治時期，臺灣大量輸出到日本的產品是？",["鹿皮","香料","茶葉","樟腦"],0,"鹿皮多銷往日本；茶葉、樟腦是清代後期出口品。"),
+TF(45,"1-1","史前時代的人沒有留下文字，所以我們無法了解他們的生活。",false,"可以透過考古的遺址、遺物了解史前生活。"),
+TF(46,"1-1","打製石器比磨製石器更早出現。",true,"舊石器時代用打製石器，新石器時代才有磨製石器。"),
+TF(47,"1-1","卑南文化屬於舊石器時代。",false,"卑南文化有磨製石器、陶器、玉器，屬新石器時代。"),
+TF(48,"1-2","臺灣原住民族在語言上屬於南島語族。",true,"正確。"),
+TF(49,"1-2","達悟族主要居住在日月潭。",false,"達悟族住在蘭嶼；日月潭是邵族。"),
+TF(50,"2-2","「新港文書」是以羅馬字拼寫西拉雅語的文書。",true,"荷蘭傳教士教西拉雅族人用羅馬字書寫，後來留下新港文書。"),
+TF(51,"2-2","荷蘭人招募漢人開墾，土地歸公司所有，稱為「王田」。",true,"正確。"),
+TF(52,"2-2","郭懷一事件是原住民反抗西班牙人的事件。",false,"郭懷一事件（1652）是漢人反抗荷蘭人。"),
+TF(53,"2-2","西班牙人統治北臺灣的時間，比荷蘭人統治臺灣的時間還長。",false,"西班牙約 16 年（1626–1642），荷蘭約 38 年（1624–1662）。"),
+TF(54,"2-2","荷蘭人在臺灣的統治，因 1662 年鄭成功攻臺而結束。",true,"正確。"),
+GR(55,"1-1",1,"這份報告描述的是哪一個史前文化？",["大坌坑文化","十三行文化","圓山文化","長濱文化"],1,"八里＋煉鐵＋人面陶罐 → 十三行文化。"),
+GR(56,"1-1",1,"根據「煉鐵遺跡」，此文化屬於哪個時代？",["舊石器時代","新石器時代","金屬器時代","歷史時代"],2,"會煉鐵 → 金屬器時代。"),
+GR(57,"1-1",1,"同樣位於八里、年代更早，以「粗繩紋陶」為特色的是哪一個文化？",["大坌坑文化","卑南文化","十三行文化","長濱文化"],0,"大坌坑文化也在八里，屬新石器早期。"),
+GR(58,"2-2",2,"資料中「將中國商品經臺灣運往日本與歐洲」的貿易方式稱為？",["朝貢貿易","轉口貿易","海禁政策","自給自足"],1,"商品不在臺灣生產，只是轉運 → 轉口貿易。"),
+GR(59,"2-2",2,"漢人不滿資料中的重稅，後來引發了哪一個事件？",["林爽文事件","朱一貴事件","郭懷一事件","濱田彌兵衛事件"],2,"林爽文、朱一貴在清代；濱田彌兵衛是日本商人與荷蘭的衝突。"),
+GR(60,"2-2",2,"資料中「將原住民村社的交易權標售給漢人商人」的制度稱為？",["王田制度","海禁政策","朝貢制度","贌社制度"],3,"贌社：把與村社交易的權利標售給漢人。")
+];
+const PASS={1:P1,2:P2};
+
+const KEY="hist7a-l12-v1";
+let st={mode:"practice",sec:"all",wrongOnly:false,ans:{},submitted:{}};
+try{const s=JSON.parse(localStorage.getItem(KEY)||"null");if(s)st=Object.assign(st,s)}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}};
+const $=id=>document.getElementById(id);
+
+// tabs
+function showTab(p){
+  document.querySelectorAll(".tabs button").forEach(b=>b.setAttribute("aria-selected",b.dataset.p===p));
+  ["notes","quiz","res"].forEach(id=>$(id).hidden=id!==p);
+  try{localStorage.setItem(KEY+"-tab",p)}catch(e){}
+}
+document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>showTab(b.dataset.p));
+let startTab="notes";try{startTab=localStorage.getItem(KEY+"-tab")||"notes"}catch(e){}
+if(location.hash==="#quiz")startTab="quiz";
+showTab(startTab);
+
+const subKey=()=>st.mode+":"+st.sec;
+const inScope=q=>st.sec==="all"||q.sec===st.sec;
+const revealed=q=>st.mode==="practice"?st.ans[q.n]!==undefined:!!st.submitted[subKey()];
+
+function render(){
+  $("secSel").value=st.sec;
+  $("modePractice").setAttribute("aria-pressed",st.mode==="practice");
+  $("modeExam").setAttribute("aria-pressed",st.mode==="exam");
+  $("wrongOnly").checked=st.wrongOnly;
+  const scope=Q.filter(inScope);
+  const done=scope.filter(q=>st.ans[q.n]!==undefined).length;
+  $("progFill").style.width=(done/scope.length*100)+"%";
+  const sub=st.mode==="exam"&&st.submitted[subKey()];
+  $("submitBtn").hidden=st.mode!=="exam"||sub;
+  const list=$("qlist");list.innerHTML="";
+  let lastPart="",lastGroup=0;
+  scope.forEach(q=>{
+    const isWrong=st.ans[q.n]!==undefined&&st.ans[q.n]!==q.a;
+    if(st.wrongOnly&&!(revealed(q)&&isWrong))return;
+    const part=q.group?"三、題組題（每題 4 分）":q.type==="tf"?"二、是非題（每題 1 分）":"一、單選題（每題 1.5 分）";
+    if(part!==lastPart){const h=document.createElement("div");h.className="part";h.textContent=part;list.appendChild(h);lastPart=part}
+    if(q.group&&q.group!==lastGroup){const p=document.createElement("div");p.className="passage";p.innerHTML="<b>題組"+(q.group===1?"一":"二")+"</b>　"+PASS[q.group];list.appendChild(p);lastGroup=q.group}
+    const show=revealed(q);const my=st.ans[q.n];
+    const card=document.createElement("div");
+    card.className="q"+(show&&my!==undefined?(my===q.a?" right":" wrong"):"");
+    card.innerHTML='<div class="qhead"><span class="qnum">'+q.n+'.</span><div>'+q.q+'<span class="tag">'+q.sec+'</span></div></div>';
+    const opts=document.createElement("div");opts.className="opts";
+    q.opts.forEach((o,i)=>{
+      const b=document.createElement("button");b.className="opt";b.type="button";
+      b.innerHTML=(q.type==="mc"?"<b>("+L[i]+")</b>":"")+"<span>"+o+"</span>";
+      if(show){b.disabled=true;if(i===q.a)b.classList.add("correct");else if(i===my)b.classList.add("incorrect")}
+      else if(i===my)b.classList.add("sel");
+      b.onclick=()=>{st.ans[q.n]=i;save();render()};
+      opts.appendChild(b);
+    });
+    card.appendChild(opts);
+    if(show){
+      const e=document.createElement("div");e.className="exp";
+      const ansTxt=q.type==="mc"?"("+L[q.a]+")":q.opts[q.a];
+      e.innerHTML=(my===undefined?"<strong class='no'>未作答</strong>":my===q.a?"<strong class='ok'>答對了</strong>":"<strong class='no'>答錯了</strong>")+"　正確答案："+ansTxt+"<br>"+q.exp;
+      card.appendChild(e);
+    }
+    list.appendChild(card);
+  });
+  if(!list.children.length){list.innerHTML='<p class="note">目前沒有錯題。'+(st.mode==="exam"&&!sub?"考試模式要交卷後才會顯示錯題。":"")+'</p>'}
+  // score
+  const graded=scope.filter(revealed);
+  const right=graded.filter(q=>st.ans[q.n]===q.a);
+  $("countTxt").textContent="已作答 "+done+"/"+scope.length+(graded.length?"｜答對 "+right.length+"/"+graded.length:"");
+  const rb=$("resultBox");rb.innerHTML="";
+  if(sub||(st.mode==="practice"&&done===scope.length)){
+    const total=scope.reduce((s,q)=>s+q.pts,0),got=right.reduce((s,q)=>s+q.pts,0);
+    const pct=Math.round(got/total*100);
+    const secs=["1-1","1-2","2-1","2-2"].filter(s=>scope.some(q=>q.sec===s));
+    rb.innerHTML='<div class="result"><div class="eyebrow">成績</div><div class="score">'+(st.sec==="all"?got:pct)+' <small style="font-size:1rem">'+(st.sec==="all"?"/ 100 分":"%")+'</small></div>'+
+      '<div class="secstats">'+secs.map(s=>{const qs=scope.filter(q=>q.sec===s);const r=qs.filter(q=>st.ans[q.n]===q.a).length;return "<div><b>"+s+"</b>　"+r+"/"+qs.length+"</div>"}).join("")+'</div>'+
+      '<p class="note" style="margin:0">勾選「只看錯題」可以集中複習答錯的題目。</p></div>';
+  }
+}
+$("secSel").onchange=e=>{st.sec=e.target.value;save();render()};
+$("modePractice").onclick=()=>{st.mode="practice";save();render()};
+$("modeExam").onclick=()=>{st.mode="exam";save();render()};
+$("wrongOnly").onchange=e=>{st.wrongOnly=e.target.checked;save();render()};
+$("submitBtn").onclick=()=>{st.submitted[subKey()]=true;save();render();$("resultBox").scrollIntoView({behavior:"smooth",block:"start"})};
+$("resetBtn").onclick=()=>{$("resetConfirm").hidden=false};
+$("resetYes").onclick=()=>{Q.filter(inScope).forEach(q=>delete st.ans[q.n]);delete st.submitted["exam:"+st.sec];st.wrongOnly=false;$("resetConfirm").hidden=true;save();render()};
+render();
+</script>
+</body>
+</html>
